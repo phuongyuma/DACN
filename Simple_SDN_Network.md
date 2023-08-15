@@ -124,7 +124,7 @@
 - Demo 3: Triển khai giống demo 1 nhưng là với topology ring
   ![](IMG/2023-08-15-12-47-29.png)
 
-- Demo 4: Triển khai giống bài báo
+- Demo 4: Triển khai các switch giống mô hình trong bài báo
   ![](IMG/2023-08-15-12-52-51.png)
   ![](IMG/2023-08-15-12-58-51.png)
 
