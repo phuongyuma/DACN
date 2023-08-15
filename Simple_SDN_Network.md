@@ -53,6 +53,23 @@
   - Câu lệnh trên tạo ra một kiến trúc mạng với 4 switch theo topology linear, dùng giao thức OpenFlow13, switch ảo Open vSwitch
 
 
+- Dùng `xterm <host_name>` để mở một terminal cho host
+
+## OpenFlow 
+
+- `OpenFlow Logical Switch`: là switch ảo hay switch logic được quản lý bởi bộ controller SDN thông qua giao thức OpenFlow, các thành phần của OFLS:
+  - `Flow Table`: chứa các dòng (entries) của luồng dữ liệu mà controller gửi đến. Mỗi dòng bao gồm các trường để so khớp với dữ liệu gửi đến và các hành động cần thực hiện nếu dữ liệu khớp với một dòng cụ thể
+    ![](IMG/2023-08-15-11-47-31.png)
+  - `OpenFlow Controller`: Là phần quản lý mạng và điều khiển Logical Switch. Bản điều khiển là trí tuệ tập trung trong mô hình SDN, nơi quyết định về cách các luồng dữ liệu được xử lý và phân chia
+  - `Ports`
+  - `Flow Rules`: Các quy tắc xác định cách xử lý dữ liệu dựa trên các trường trong gói tin dữ liệu: địa chỉ Mac, địa chỉ IP, cổng nguồn, cổng đích,..
+  - `Actions`: Mỗi dòng trong flow table đi kèm với một hay nhiều hành động. Các hành động này có thể bao gồm chuyển tiếp gói tin đến cổng cụ thể, gửi gói tin tới bản điều khiển để, thay đổi thông tin gói tin,..
+  - `Match Fields`: Các trường trong gói tin dữ liệu được sử dụng để so khớp với các quy tắc trong flow table.
+  - `Flow Statistics`: Thông tin về tình trạng và hiệu suất của các luồng dữ liệu trong logical switch: số lượng gói tin, băng thông, thời gian hoạt động
+  - `Openflow Channel`: Kết nối OFLS với bộ controller, từ đó bộ controller có thể cấu hình và điều khiển switch, nhận các sự kiện từ switch và gửi các gói tin đi từ switch
+
+![](IMG/2023-08-14-19-38-33.png)
+
 ## Ryu controller 
 
 - Ryu là một dự án mã nguồn mở cung cấp một framework cho việc phát triển các ứng dụng điều khiển mạng dựa trên giao thức OpenFlow. RYU cho phép bạn xây dựng các ứng dụng điều khiển mạng tùy chỉnh và linh hoạt, cho phép bạn tùy chỉnh hành vi của mạng theo cách bạn mong muốn.
@@ -62,4 +79,20 @@
 
 
 - Triển khai Ryu với Flow manager: `ryu-manager --observe-links flowmanager.py ryu.app.simple_switch_13`
+
+
+
+## Demo 
+
+- Demo 1: Triển khai ryu và mininet trên cùng 1 máy
+  - Dùng flowmanager làm giao diện quản lý
+  - Dùng topology linear với 1 switch và 4 host
+  
+  ![](IMG/2023-08-14-18-33-30.png)
+
+  ![](IMG/2023-08-14-18-31-39.png)
+
+  ![](IMG/2023-08-14-18-32-41.png)
+
+
 
