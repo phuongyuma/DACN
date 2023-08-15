@@ -43,7 +43,6 @@
 - Mininet có một công cụ mã nguồn mở với khả năng triển khai mô phỏng môi trường mạng ảo một cách nhanh chóng và dễ dàng. Được sử dụng phổ biến để mô phỏng các tình huống mạng phức tạp, kiểm tra giao thức mạng và phát triển ứng dụng SDN. Mininet có thể tạo mạng ảo trên một hoặc nhiều máy tính. Các tính năng của mininet:
   - Tạo ra mô hình mạng với các switch, host, link ảo
   - Topology mạng: Định nghĩa các kiến trúc mạng khác nhau như linear, tree, start (xác định cách các switch và hsot được kết nối với nhau)
-    
     ![](IMG/2023-08-13-12-53-11.png)
   - Có thể thiết lập thông số như băng thông, độ trễ,...
   - Hỗ trợ các bộ controller khác nhau như Ryu, OpenDaylight, Floodlight (Có khả năng điều khiển và kiểm soát các switch mạng ảo)
@@ -52,8 +51,10 @@
 - Ví dụ: `sudo mn --controller=remote,ip=127.0.0.1 --mac -i 10.1.1.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=single,4`
   - Câu lệnh trên tạo ra một kiến trúc mạng với 4 switch theo topology linear, dùng giao thức OpenFlow13, switch ảo Open vSwitch
 
-
-- Dùng `xterm <host_name>` để mở một terminal cho host
+- Xóa ovs bridges và namespaces cũ: `sudo mn -c`
+- Thực thi lệnh trên 1 host/node:
+  - Dùng `xterm <host_name>` để mở một terminal xterm cho host
+  - Thực hiện ngay trên mininet shell: `mininet> <host_name> command`
 
 ## OpenFlow 
 
@@ -70,16 +71,39 @@
 
 ![](IMG/2023-08-14-19-38-33.png)
 
+- `OpenFlow Matching`
+  ![](IMG/2023-08-15-11-49-06.png)
+
+- `OpenFlow Messages`:
+  - Controller to Switch:
+    - Feature Request
+    - Packet Out
+    - Modify Flow Table
+    - Modify Group Table
+    - Modify Meter Table
+    - OpenFlow Switch Description Request
+    - OpenFlow Port Description Request
+    - Openflow Statistics Request(Flow, Port, Flowtable, Aggregate, Group, Meter, Queue )
+    - Role Request
+    - Barrier Request
+  - Asynchronous
+    - Packet In
+    - Flow Removed
+  - Symmetric
+    - Hello Message
+    - Echo Message
+
+- `Openflow Ports`
+  - Physical ports: s1-eth1,..
+  - Logical ports: vxlan0
+  - Reserved ports: FLOOD, ALL, CONTROLLER, IN PORT, LOCAL, NORMAL
+
 ## Ryu controller 
 
 - Ryu là một dự án mã nguồn mở cung cấp một framework cho việc phát triển các ứng dụng điều khiển mạng dựa trên giao thức OpenFlow. RYU cho phép bạn xây dựng các ứng dụng điều khiển mạng tùy chỉnh và linh hoạt, cho phép bạn tùy chỉnh hành vi của mạng theo cách bạn mong muốn.
 
 
-
-
-
-- Triển khai Ryu với Flow manager: `ryu-manager --observe-links flowmanager.py ryu.app.simple_switch_13`
-
+- Triển khai Ryu với Flow manager: `ryu-manager --observe-links ~/flowmanager.py ryu.app.simple_switch_13`
 
 
 ## Demo 
@@ -94,5 +118,14 @@
 
   ![](IMG/2023-08-14-18-32-41.png)
 
+- Demo 2: Triển khai giống demo 1 nhưng dùng 6 switch và 6 host
+  ![](IMG/2023-08-15-12-49-36.png)
 
+- Demo 3: Triển khai giống demo 1 nhưng là với topology ring
+  ![](IMG/2023-08-15-12-47-29.png)
 
+- Demo 4: Triển khai giống bài báo
+  ![](IMG/2023-08-15-12-52-51.png)
+  ![](IMG/2023-08-15-12-58-51.png)
+
+  note: chưa ping được tới hết các node
