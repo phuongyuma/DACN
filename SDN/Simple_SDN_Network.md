@@ -102,11 +102,27 @@
 
 - Ryu là một dự án mã nguồn mở cung cấp một framework cho việc phát triển các ứng dụng điều khiển mạng dựa trên giao thức OpenFlow. RYU cho phép bạn xây dựng các ứng dụng điều khiển mạng tùy chỉnh và linh hoạt, cho phép bạn tùy chỉnh hành vi của mạng theo cách bạn mong muốn.
 
+- Kiểm tra port của Openflow: `netstat -ap | grep 6653`
 
+
+- Run Ryu Applications: 
+  - `ryu-manager ryu.app.<ryu application's name>`
+  - `ryu-manager <python-file-name`
+  - `ryu-manager <application1> <application2>`
+
+- Flows:
+  - Reactive Flows: Khi có gói tin mới xuất hiện thì switch sẽ gửi tới controller và controller sẽ gửi yêu cầu cấu hình luồng dữ liệu tới switch. Từ đó switch sẽ cấu hình bảng luồng với dữ liệu mới và xử lý tiếp các gói tin tương tự bằng luồng dữ liệu này.
+  - Proacitve Flows: Cài đặt và cấu hình sẵn các luồng dữ liệu trên switch dựa trên các topology mạng và chính sách điều khiển
+
+- Open vSwitch (OVS): Một switch ảo được sử dụng trong môi trường ảo hóa và SDN
+  - Hiển thị danh sách các switch và bridge: `ovs-vsctl show`
+  - Hiển thị các luồng dữ liệu trên switch
 - Triển khai Ryu với Flow manager: `ryu-manager --observe-links ~/flowmanager.py ryu.app.simple_switch_13`
 
 
-## Demo 
+
+## Demo
+### Demo 1
 
 - Demo 1: Triển khai ryu và mininet trên cùng 1 máy
   - Dùng flowmanager làm giao diện quản lý
@@ -129,3 +145,5 @@
   ![](IMG/2023-08-15-12-58-51.png)
 
   note: chưa ping được tới hết các node
+
+### Demo 2
