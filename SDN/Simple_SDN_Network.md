@@ -146,4 +146,21 @@
 
   note: chưa ping được tới hết các node
 
-### Demo 2
+### Demo 2 
+
+- Mục tiêu:
+  - Tìm hiểu về add flow cho các giao thức ngoài icmp
+  - Tìm hiểu về rest api của ryu, gửi request add flow qua api
+
+Rest API với Ryu: thêm ryu.app.ofctl_rest vào đuôi lệnh khi chạy Ryu
+- Check stats qua api (done): curl -X GET http://localhost:8080/stats/switches
+- Add flow đơn giản
+- Xóa flow
+
+-> Có thể add flow chung thay vì phải chỉnh theo từng giao thức icmp, tcp, udp (cần cập nhật thông tin arp ánh xạ cho mỗi hosts)
+
+- Hoàn thành add flow cho 2 host 
+- Chưa hoàn thành add flow cho tất cả host
+- Chú ý tình trạng khi dùng vòng lặp để add flow, nên add table/group trước
+- add_flow_2.py có thể ping được tới các host nhưng lại xuất hiện tình trạng các gói tin duplicate
+
