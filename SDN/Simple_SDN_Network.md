@@ -164,3 +164,4 @@ Rest API với Ryu: thêm ryu.app.ofctl_rest vào đuôi lệnh khi chạy Ryu
 - Chú ý tình trạng khi dùng vòng lặp để add flow, nên add table/group trước
 - add_flow_2.py có thể ping được tới các host nhưng lại xuất hiện tình trạng các gói tin duplicate
 
+  
