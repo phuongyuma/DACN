@@ -26,3 +26,20 @@
   - Tìm hiểu về rest api của ryu, gửi request add flow qua api
 
 ### 5/9/2023
+
+- Hiểu và tiến hành dùng RYU OFCTL REST API:
+  - OFCTL - Openflow control using REST Interface
+  - Ứng dụng ryu.app.ofctl_rest có sẵn của RYU cung cấp REST API cho ta để có thể cấu hình, cập nhật các giá trị và luồng của switch (https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html)
+
+- Hiểu và tiến hành add flow cho switch:
+  - Dùng lệnh curl để add flow
+  - Dùng flow-manager để add flow
+  - Dùng thư viện request của python để add nhiều flow 1 lúc 
+    - [Ví dụ](SDN\add_flow.py)
+
+- Khi add flow, ta không thêm giá trị ip_proto thì RYU sẽ nhận định là match với tất cả giao thức
+- Tiến độ triển khai: 
+  - Add flow cho topology linear thành công, các host có thể ping được với nhau
+  - Đối với topology ring gồm 5 switch, mỗi switch gồm 1 host
+    - Add flow cho 1 host ping được với 1 host khác, nhưng khi add flow cho tất cả host như vậy thì lại không host nào ping được tới nhau
+    - Với [add_flow_2.py](SDN\add_flow_2.py) thì ban đầu khi ping thì xuất hiện tình trạng Duplicate, sau đó thì các host không ping được tới nhau (có lúc được có lúc không)
