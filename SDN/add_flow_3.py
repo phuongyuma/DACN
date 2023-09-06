@@ -1,3 +1,5 @@
+## Add flow for topo_ring_3h.py
+
 import requests
 
 ## add table
@@ -27,8 +29,8 @@ s1_group50 = {
     ]
 }
 
-s5_group51 = {
-    "dpid": 5,
+s3_group53 = {
+    "dpid": 2,
     "type": "SELECT",
     "group_id": 51,
     "buckets": [
