@@ -12,8 +12,7 @@ s1_flow1 = {
     "hard_timeout": 0,
     "priority": 100,
     "match":{
-        #"dl_dst":"00:00:00:00:00:01"
-        "ipv4_dst":"192.168.1.1"
+        "dl_dst":"00:00:00:00:00:01"
     },
     "actions":[
         {
@@ -29,7 +28,7 @@ s1_flow2 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":2
     },
@@ -46,7 +45,7 @@ s1_flow3 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":1
     },
@@ -62,7 +61,7 @@ s1_flow4 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":3
     },
@@ -81,8 +80,7 @@ s2_flow1 = {
     "hard_timeout": 0,
     "priority": 100,
     "match":{
-        #"dl_dst":"00:00:00:00:00:02"
-        "ipv4_dst":"192.168.1.2"
+        "dl_dst":"00:00:00:00:00:02"
     },
     "actions":[
         {
@@ -98,7 +96,7 @@ s2_flow2 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":1
     },
@@ -114,7 +112,7 @@ s2_flow3 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":2
     },
@@ -130,7 +128,7 @@ s2_flow4 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":3
     },
@@ -149,8 +147,7 @@ s3_flow1 = {
     "hard_timeout": 0,
     "priority": 100,
     "match":{
-        #"dl_dst":"00:00:00:00:00:03"
-        "ipv4_dst":"192.168.1.3"
+        "dl_dst":"00:00:00:00:00:03"
     },
     "actions":[
         {
@@ -166,7 +163,7 @@ s3_flow2 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":2
     },
@@ -182,7 +179,7 @@ s3_flow3 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":1
     },
@@ -198,7 +195,7 @@ s3_flow4 = {
     "table_id": 0,
     "idle_timeout": 0,
     "hard_timeout": 0,
-    "priority": 100,
+    "priority": 90,
     "match":{
         "in_port":3
     },

@@ -43,3 +43,11 @@
   - Đối với topology ring gồm 5 switch, mỗi switch gồm 1 host
     - Add flow cho 1 host ping được với 1 host khác, nhưng khi add flow cho tất cả host như vậy thì lại không host nào ping được tới nhau
     - Với [add_flow_2.py](SDN\add_flow_2.py) thì ban đầu khi ping thì xuất hiện tình trạng Duplicate, sau đó thì các host không ping được tới nhau (có lúc được có lúc không)
+
+## 9/9/2023
+
+- Vẫn còn mắc kẹt ở việc add flow cho vòng lặp:
+  - Tạo 1 mạng SDN kết nối với RYU gồm 3 switch, mỗi switch có 1 host, 3 switch nối với nhau tạo thành topo ring
+    - Cả 3 switch đều ping được tới nhau
+    - Host h1 và host h2 ping được tới nhau, nhưng host h3 không thể ping đi hay ping tới từ các host khác 
+  ==>> sau khi thêm bảng arp thì thành công các host ping được tới nhau???? chưa hiểu lý do lắm

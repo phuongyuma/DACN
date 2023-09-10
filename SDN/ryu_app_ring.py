@@ -65,25 +65,6 @@ class SimpleSwitch13(app_manager.RyuApp):
             match = parser.OFPMatch(in_port=2)
             self.add_flow(datapath, 10, match, actions)
 
-       # switch s5
-        if datapath.id == 5:
-        # add group tables
-            self.send_group_mod(datapath)
-            actions = [parser.OFPActionGroup(group_id=50)]
-            match = parser.OFPMatch(in_port=3)
-            self.add_flow(datapath, 10, match, actions)
-
-
-            #add the return flow for h2 in s4.  
-            # h2 is connected to port 3.
-            actions = [parser.OFPActionOutput(3)]
-            match = parser.OFPMatch(in_port=1)
-            self.add_flow(datapath, 10, match, actions)
-
-            actions = [parser.OFPActionOutput(3)]
-            match = parser.OFPMatch(in_port=2)
-            self.add_flow(datapath, 10, match, actions)
-
         # switch s2
         if datapath.id == 2:
         # add group tables
@@ -111,7 +92,6 @@ class SimpleSwitch13(app_manager.RyuApp):
             match = parser.OFPMatch(in_port=3)
             self.add_flow(datapath, 10, match, actions)
 
-
             #add the return flow for h4 in s3.  
             # h4 is connected to port 3.
             actions = [parser.OFPActionOutput(3)]
@@ -121,30 +101,6 @@ class SimpleSwitch13(app_manager.RyuApp):
             actions = [parser.OFPActionOutput(3)]
             match = parser.OFPMatch(in_port=2)
             self.add_flow(datapath, 10, match, actions)
-
-        # switch s4
-        if datapath.id == 4:
-        # add group tables
-            self.send_group_mod(datapath)
-            actions = [parser.OFPActionGroup(group_id=50)]
-            match = parser.OFPMatch(in_port=3)
-            self.add_flow(datapath, 10, match, actions)
-
-            #add the return flow for h5 in s4.  
-            # h5 is connected to port 3.
-            actions = [parser.OFPActionOutput(3)]
-            match = parser.OFPMatch(in_port=1)
-            self.add_flow(datapath, 10, match, actions)
-
-            actions = [parser.OFPActionOutput(3)]
-            match = parser.OFPMatch(in_port=2)
-            self.add_flow(datapath, 10, match, actions)
-        
-
-
-
-
-
 
 
 
