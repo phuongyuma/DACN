@@ -170,3 +170,6 @@ Rest API với Ryu: thêm ryu.app.ofctl_rest vào đuôi lệnh khi chạy Ryu
 
 
 ![](IMG/2023-09-08-10-28-34.png)
+
+
+![](IMG/2023-09-11-19-29-17.png)
