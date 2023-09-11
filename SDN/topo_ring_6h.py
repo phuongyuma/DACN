@@ -39,22 +39,23 @@ class SingleSwitchTopo(Topo):
         h6 = self.addHost('h6', mac="00:00:00:00:00:06", ip="192.168.1.6/24")
 
         # add links between switch and host
-        self.addLink(s1,h1,5,1)
-        self.addLink(s2,h2,5,1)
-        self.addLink(s3,h3,5,1)
-        self.addLink(s4,h4,5,1)
-        self.addLink(s5,h5,5,1)
-        self.addLink(s6,h6,5,1)
+        self.addLink(s1,h1,3,1)
+        self.addLink(s2,h2,3,1)
+        self.addLink(s3,h3,3,1)
+        self.addLink(s4,h4,3,1)
+        self.addLink(s5,h5,3,1)
+        self.addLink(s6,h6,3,1)
 
         # add links between switch
         self.addLink(s1,s2,1,1)
-        self.addLink(s1,s3,2,1)
-        self.addLink(s2,s3,2,2)
-        self.addLink(s3,s4,3,1)
-        self.addLink(s3,s5,4,1)
-        self.addLink(s4,s5,2,2)
-        self.addLink(s4,s6,3,1)
-        self.addLink(s5,s6,3,2)
+        self.addLink(s1,s6,2,1) 
+        self.addLink(s2,s3,2,1)
+        self.addLink(s3,s4,2,1)
+        self.addLink(s4,s5,2,1)
+        self.addLink(s5,s6,2,1)
+        self.addLink(s6,s1,2,2)
+
+        
 
 
 if __name__ == '__main__':
