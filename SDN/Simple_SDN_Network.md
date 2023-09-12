@@ -123,8 +123,35 @@
 
 ![](IMG/2023-09-11-13-53-16.png)
 
+## Test
 
+### TCP Traffic Test
 
+h1
+iperf -s
+
+h6
+iperf -c 192.168.1.1 -i 10 -t 30
+iperf -c 192.168.1.1 10 -b 10m -t 30
+iperf -c 1192.168.1.1 10 -P 10 -t 30
+
+### UDP Traffic Test
+
+h1
+iperf -u -s 
+
+h6
+iperf -u -c 192.168.1.1 -b 10m -i 10 -t 30
+iperf -u -c 192.168.1.1 -b 10m -i 10 -P 10 -t 
+
+### HTTP Traffic Tests
+
+h1
+python -m SimpleHTTPServer 9000
+
+h6
+curl http://192.168.1.1:9000/
+ab -n 500 -c 50 http://192.168.1.1/
 ## Demo
 ### Demo 1
 
@@ -173,3 +200,17 @@ Rest API với Ryu: thêm ryu.app.ofctl_rest vào đuôi lệnh khi chạy Ryu
 
 
 ![](IMG/2023-09-11-19-29-17.png)
+
+- Mô hình bài báo:
+
+Test ICMP
+![](IMG/2023-09-12-09-17-32.png)
+
+Test TCP
+![](IMG/2023-09-12-09-15-18.png)
+
+Test UDP
+![](IMG/2023-09-12-09-18-15.png)
+
+Test HTTP
+![](IMG/2023-09-12-09-40-26.png)
