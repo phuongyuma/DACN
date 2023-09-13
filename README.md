@@ -1,6 +1,6 @@
 # DACN
  
-## Meetings note
+## Note of meeting and task
 
 ### 18/7/2023
 
@@ -51,3 +51,16 @@
     - Cả 3 switch đều ping được tới nhau
     - Host h1 và host h2 ping được tới nhau, nhưng host h3 không thể ping đi hay ping tới từ các host khác 
   ==>> sau khi thêm bảng arp thì thành công các host ping được tới nhau???? chưa hiểu lý do lắm
+
+## 13/9/2023
+
+- Đã triển khai được mô hình giống như bài báo:
+  - Đã test với protocol http, icmp, udp, tcp
+  - Xuất hiện tình trạng có những gói tin được gửi đi liên tục => cấu hình vẫn có vấn đề
+
+- Hướng tìm hiểu tiếp tục:
+  - Viết một đoạn code làm gọn lại phần add flow
+  - Thay vì add flow thì xây dựng 1 RYU application để thực hiện add flow ngắn gọn và nhanh chóng hơn
+  - Tìm lỗi sai của cấu hình và sửa lại
+  - Tìm hiểu làm thế nào để triển khai Deep Reinforcement Learning trên RYU và mạng SDN được xây
+

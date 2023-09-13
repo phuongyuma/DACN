@@ -153,7 +153,7 @@ h6
 curl http://192.168.1.1:9000/
 ab -n 500 -c 50 http://192.168.1.1/
 ## Demo
-### Demo 1
+### Demo A
 
 - Demo 1: Triển khai ryu và mininet trên cùng 1 máy
   - Dùng flowmanager làm giao diện quản lý
@@ -177,7 +177,7 @@ ab -n 500 -c 50 http://192.168.1.1/
 
   note: chưa ping được tới hết các node
 
-### Demo 2 
+### Demo B
 
 - Mục tiêu:
   - Tìm hiểu về add flow cho các giao thức ngoài icmp
@@ -202,6 +202,7 @@ Rest API với Ryu: thêm ryu.app.ofctl_rest vào đuôi lệnh khi chạy Ryu
 ![](IMG/2023-09-11-19-29-17.png)
 
 - Mô hình bài báo:
+Đã triển khai được giống mô hình bài báo nhưng xuất hiện tình trạng là vẫn có các gói tin được gửi liên tục, ngoài ra thì flow-manager không dùng được.
 
 Test ICMP
 ![](IMG/2023-09-12-09-17-32.png)
