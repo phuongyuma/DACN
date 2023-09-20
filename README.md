@@ -64,3 +64,7 @@
   - Tìm lỗi sai của cấu hình và sửa lại
   - Tìm hiểu làm thế nào để triển khai Deep Reinforcement Learning trên RYU và mạng SDN được xây
 
+- Task được giao:
+  - Đọc bài báo và tìm trong bài báo các giá trị state, action, reward, policy theo RL
+  - Tìm hiểu về Qlearning và lấy code game về sửa
+
