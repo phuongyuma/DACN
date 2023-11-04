@@ -68,3 +68,45 @@
   - Đọc bài báo và tìm trong bài báo các giá trị state, action, reward, policy theo RL
   - Tìm hiểu về Qlearning và lấy code game về sửa
 
+## 25/9/2023
+
+- Đọc hiểu code, hiểu cách RL chạy qua debug
+- Tạo các tham số giống bài báo rồi cho thay vào code của cartpole để chạy
+
+## 9/10/2023
+
+- Một vài vấn đề mắc phải:
+  - Đã triển khai được DQN sau khi tham khảo trên mạng nhưng vẫn còn các vấn đề sau:
+    - Khi record video thì chưa tạo được video cartpole chạy thành công (Có thể do lúc train lỗi hoặc chưa train được lâu như tác giả)
+  - Chưa tạo được env cho mạng
+
+
+- Xem thử output của action là ma trận 1 chiều hay nhiều chiều
+- Xem thử input của State có phải là ma trận nhiều chiều không
+- Xác định trước state và action theo bảng trong paper rồi tiến hành triển khai DQN
+- Triển DDQN thành DQN trong code cartpole
+
+
+- Input
+  - State 
+    - State là ma trận 2 chiều: // chưa chắc lắm vì khác với công thức của bài báo nhưng lại đúng vài table exmaple của bài báo
+      - Mỗi cột chứa 2 giá trị:
+        - Trạng thái tài nguyên được lấy mẫu pj 
+        - Trạng thái của bộ phân tích lưu lượng được trọng dk
+      - Mỗi cột có m hàng (m là số điểm lấy mẫu)
+
+- Hàm SelectAction:
+  - input là state và index của episode hiện tại
+  - Khác biệt giữa việc chọn hành động của bài báo và của cartpole
+    - Cartpole cần chọn 1 hành động từ 2 hành động
+    - Bài báo cần chọn 3 hành động từ 3 dãy hành động khác nhau
+      - determines the sampling points pj ∈ O
+      - determines which traffic analyzer to assign at each sampling point
+      - determines the reduction of the sampling rate
+
+
+### 30/10/2023
+
+- Tìm hiểu thuật toán DDPG: tìm code, giả lập dữ liệu
+- Tìm hiểu về A2C,PPO,actor-critic
+- Báo cáo tiếp vào ngày 13/11/2023, note lại các công việc cần làm để hoàn thành đồ án, đánh dấu những công việc đã hoàn thành, nếu chưa hoàn thành được 5/x thì phải nhanh chóng hơn
