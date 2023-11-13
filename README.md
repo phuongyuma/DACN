@@ -110,3 +110,22 @@
 - Tìm hiểu thuật toán DDPG: tìm code, giả lập dữ liệu
 - Tìm hiểu về A2C,PPO,actor-critic
 - Báo cáo tiếp vào ngày 13/11/2023, note lại các công việc cần làm để hoàn thành đồ án, đánh dấu những công việc đã hoàn thành, nếu chưa hoàn thành được 5/x thì phải nhanh chóng hơn
+
+
+## List to do
+
+- [X] Đọc và tìm hiểu về đề tài và mô hình cần triển khai
+- [X] Tìm hiểu và triển khai mạng SDN
+  - [X] Tìm hiểu về SDN, Ryu Controller, Mininet, Containernet, OpenFlow (Chưa nắm rõ về Ryu Controller cho lắm)
+  - [X] Triển khai mạng SDN đơn giản với Ryu Controller và Mininet
+  - [X] Triển khai mạng SDN gồm 6 Switch giống mô hình và các máy kết nối với các Switch có thể ping tới nhau 
+- [X] Tìm hiểu và triển khai thuật toán DDQN (ngoài lề)
+  - [X] Triển khai DDQN với cartpole
+  - [ ] Triển khai DDQN theo mô hình
+- [ ] Tìm hiểu và triển khai thuật toán DDPG
+  - [ ] Triển khai Policy Gradient với cartpole
+  - [ ] Tìm hiểu về A2C, PPO, actor-critic
+  - [ ] Triển khai DDPG với cartpole
+  - [ ] Triển khai DDPG với dạng action và state giống với bài báo
+  - [ ] Dùng thuật toán DDPG để tự động xác định tốc độ lấy mẫu và bộ phân tích lưu lượng của từng điểm lấy mẫu
+- [ ] Triển khai thuật toán DDPG với mạng SDN
