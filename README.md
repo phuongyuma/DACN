@@ -111,7 +111,35 @@
 - Tìm hiểu về A2C,PPO,actor-critic
 - Báo cáo tiếp vào ngày 13/11/2023, note lại các công việc cần làm để hoàn thành đồ án, đánh dấu những công việc đã hoàn thành, nếu chưa hoàn thành được 5/x thì phải nhanh chóng hơn
 
+### 27/11/2023
 
+- Xem coi action, reward có phụ thuộc vào next state không
+- Hoàn tất xây dựng mô hình theo figure 3 của bài báo
+
+### 11/12/2023
+
+- Đã thêm các phần relay buffer, update actor model, critic model
+- Gặp trục trặc với phần soft update
+- Ràng buộc state để tránh các state vô nghĩa
+- tính toán reward
+
+### 25/12/2023
+
+- Trục trặc:
+  - Time step and sampling period
+  - Chưa rõ cách tính total flow và sampled flow
+  - Chưa rõ về Steering Overhead Penalty rv (điểm rv sẽ được trừ vào reward nếu chi phí điều hướng tới từ sampled points tới traffic analyzers quá cao)
+  - Các thông số như hiệu suất, khả năng tính toán, xử lý của bộ phân tích lưu lượng, tổng số luồng,.. đang được tạo giả
+
+### 8/1/2024
+
+- Chưa tạo được traffic analyzer trong mininet
+- Sửa lại phần sampling period
+- Sửa lại topology trong mininet cho mượt hơn.
+- Các host trong mininet liên tục gửi gói tin và chưa dừng lại
+
+- Tạo traffic analyzer external, và thử ping từ trong mininet ra host ở ngoài
+- Vai trò của traffic analyzer trong mô hình
 ## List to do
 
 - [X] Đọc và tìm hiểu về đề tài và mô hình cần triển khai
@@ -123,9 +151,19 @@
   - [X] Triển khai DDQN với cartpole
   - [ ] Triển khai DDQN theo mô hình
 - [ ] Tìm hiểu và triển khai thuật toán DDPG
-  - [ ] Triển khai Policy Gradient với cartpole
-  - [ ] Tìm hiểu về A2C, PPO, actor-critic
+  - [X] Triển khai Policy Gradient với cartpole
+  - [X] Tìm hiểu về A2C, PPO, actor-critic
+  - [X] Triển khai A2C với cartpole
   - [ ] Triển khai DDPG với cartpole
-  - [ ] Triển khai DDPG với dạng action và state giống với bài báo
-  - [ ] Dùng thuật toán DDPG để tự động xác định tốc độ lấy mẫu và bộ phân tích lưu lượng của từng điểm lấy mẫu
+  - [ ] Triển khai DPG, actor-critic với mô hình giống như bài báo
+    - [ ] Xây dựng class NetworkEnv (môi trường cho bài báo)
+      - [ ] Tạo State Space, Action Space (use random to fake input for model)
+      - [ ] Hàm reset() 
+      - [ ] Hàm step() 
+      
+  - [ ] Triển khai DDPG với mô hình giống như trong bài báo
 - [ ] Triển khai thuật toán DDPG với mạng SDN
+  - [ ] Triển khai agent với DDPG để nhận input từ mạng SDN đã triển khai
+  - [ ] Triển khai và huấn luyện agent với DDPG theo mô hình được giao
+- [ ] Viết báo cáo 
+
